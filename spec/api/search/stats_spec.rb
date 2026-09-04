@@ -7,7 +7,7 @@ describe 'stats', :type => :search do
       stat :visibility, :facet => :published_at
     end
 
-    result.stat(:visibility).field_name.should == :visibility
+    expect(result.stat(:visibility).field_name).to eq(:visibility)
   end
 
 end
