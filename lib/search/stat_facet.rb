@@ -11,7 +11,7 @@ module Sunspot
       end
 
       def rows
-        #sort options :count or :stat_field 
+        #sort options :count or :stat_field
         @options[:sort] ||= :count
         @options[:type] ||= "sum"
         @options[:limit] ||= -1
@@ -39,10 +39,10 @@ module Sunspot
           else
             rows.sort! { |lrow, rrow| lrow.stat_field <=> rrow.stat_field }
           end if @sort
-          return rows.empty? ? [] : rows[0..@options[:limit]]
+          rows.empty? ? [] : rows[0..@options[:limit]]
         rescue Exception => e
           puts "Sunspot Stats error: #{e.message} \n\n #{e.backtrace}"
-          return []
+          []
         end
       end
     end

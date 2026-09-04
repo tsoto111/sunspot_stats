@@ -8,9 +8,9 @@ describe "stats component" do
       stat :visibility, :facet => :published_at
     end
 
-    connection.should have_last_search_including(:stats, "true")
-    connection.should have_last_search_including(:"stats.field", "visibility_f")
-    connection.should have_last_search_including(:"stats.facet", "published_at_d")
+    expect(connection).to have_last_search_including(:stats, "true")
+    expect(connection).to have_last_search_including(:"stats.field", "visibility_f")
+    expect(connection).to have_last_search_including(:"stats.facet", "published_at_d")
   end
   
 end
