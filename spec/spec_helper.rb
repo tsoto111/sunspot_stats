@@ -17,20 +17,20 @@ RSpec.configure do |config|
   # Mock session available to all spec/api tests
   config.include MockSessionHelper,
                  :type => :api,
-                 :example_group => {:file_path => /spec[\\\/]api/}
+                 :file_path => /spec[\\\/]api/
 
   # Real Solr instance is available to integration tests
   config.include IntegrationHelper,
                  :type => :integration,
-                 :example_group => {:file_path => /spec[\\\/]integration/}
+                 :file_path => /spec[\\\/]integration/
 
   # Nested under spec/api
   [:indexer, :query, :search].each do |spec_type|
     helper_name = "#{spec_type}_helper"
 
     config.include Sunspot::Util.full_const_get(Sunspot::Util.camel_case(helper_name)),
-                   :type          => spec_type,
-                   :example_group => {:file_path => /spec[\\\/]api[\\\/]#{spec_type}/}
+                   :type      => spec_type,
+                   :file_path => /spec[\\\/]api[\\\/]#{spec_type}/
   end
 end
 
