@@ -17,6 +17,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = SunspotStats::VERSION
 
+  gem.add_dependency "ostruct"
   gem.add_dependency "sunspot"
 
   gem.add_development_dependency "rspec"
