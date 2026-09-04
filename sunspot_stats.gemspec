@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["duccio giovannelli"]
   gem.email         = ["giovannelli@extendi.it"]
   gem.description   = <<-TEXT
-      Sunspot is a library providing a powerful, all-ruby API for the Solr search engine. This gem extend sunspot adding the 
+      Sunspot is a library providing a powerful, all-ruby API for the Solr search engine. This gem extend sunspot adding the
       statsComponent feature, which returns simple statistics for indexed numeric fields within the DocSet.
     TEXT
   gem.summary       = "Added the statsComponent to sunspot"
@@ -16,9 +16,11 @@ Gem::Specification.new do |gem|
   gem.name          = "sunspot_stats"
   gem.require_paths = ["lib"]
   gem.version       = SunspotStats::VERSION
-  
+
+  gem.add_dependency "sunspot"
+
   gem.add_development_dependency "rspec"
-  
+
   gem.rdoc_options << '--webcvs=http://github.com/giovannelli/sunspot_stats/tree/master/%s' <<
                    '--title' << 'Sunspot Stat - StatsComponent for sunspot - API Documentation' <<
                    '--main' << 'README.rdoc'
